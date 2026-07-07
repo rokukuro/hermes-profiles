@@ -1,0 +1,63 @@
+# ── 1. 秘密情報の完全防御（APIキーやアカウントの流出厳禁） ───────────
+.env
+auth.json
+auth.json.corrupt
+
+# ── 2. 実行時ロック・プロセスID・状態JSONの完全排除 ──────────────────
+*.lock
+*.pid
+gateway_state.json
+desktop-build-stamp.json
+models_dev_cache.json
+ollama_cloud_models_cache.json
+provider_models_cache.json
+channel_directory.json
+.scratch_tip_shown
+.skills_prompt_snapshot.json
+.update_check
+.update_exit
+.update_check
+.update_status
+.update_pending
+.update_lock
+.update_download
+.update_installed
+.update_failed
+
+# ── 3. データベース一時ファイル・ジャーナルの排除 ────────────────────
+*.db
+*.db-journal
+*.sqlite
+*.db-shm
+*.db-wal
+*.dispatch.lock
+*.init.lock
+
+# ── 4. キャッシュおよび動的な作業フォルダの完全排除 ───────────────────
+logs/
+*.log
+sessions/
+tmp/
+cache/
+bootstrap-cache/
+state-snapshots/
+memories/
+pets/
+skills/
+cron/
+bin/
+kanban/
+hermes-agent/
+
+# ── 5. 巨大バイナリ・インストーラーの完全排除 ─────────────────────────
+*.exe
+*.msi
+*.zip
+*.tar.gz
+
+# ── 6. ローカルバックアップおよび誤生成ファイルの排除 ─────────────────
+旧/
+"docker run -d `.*"
+.update_exit_code
+# ── 7. 各プロファイルのWindows自動起動サービス（個人情報の直書き） ──────
+gateway-service/
