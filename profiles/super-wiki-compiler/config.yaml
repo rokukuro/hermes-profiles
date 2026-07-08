@@ -4,7 +4,10 @@ model:
   base_url: https://openrouter.ai/api/v1
 fallback_providers: []
 toolsets:
-  - hermes-cli
+  - file     # Obsidianへのファイルの読み書きに必須
+  - web      # URLからの情報収集・Scrapingに必須
+  - skills   # 自作スキル（SKILL.md）の実行に必須
+  - terminal # 万が一の物理コマンド操作（フォルダ作成等）の保険
 max_live_sessions: 16
 agent:
   max_turns: 60
@@ -287,8 +290,8 @@ display:
   tui_auto_resume_recent: false
   tui_agents_nudge: true
   bell_on_complete: false
-  show_reasoning: false
-  reasoning_full: false
+  show_reasoning: true
+  reasoning_full: true
   memory_notifications: 'on'
   streaming: true
   timestamps: false
@@ -302,7 +305,7 @@ display:
   turn_completion_explainer: true
   show_cost: false
   skin: default
-  language: en
+  language: ja
   tui_status_indicator: kaomoji
   cli_refresh_interval: 1.0
   user_message_preview:
@@ -386,7 +389,7 @@ tts:
   piper:
     voice: en_US-lessac-medium
 stt:
-  enabled: true
+  enabled: false
   provider: local
   local:
     model: base
